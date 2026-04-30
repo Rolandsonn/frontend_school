@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 const LoginPage = () => {
@@ -11,9 +11,11 @@ const LoginPage = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   // если уже авторизован → на главную
-  if (localStorage.getItem("access_token")) {
-    navigate("/");
-  }
+  useEffect(() => {
+    if (localStorage.getItem("access_token")) {
+      navigate("/");
+    }
+  }, []);
 
   function handleChange(e) {
     setForm({
