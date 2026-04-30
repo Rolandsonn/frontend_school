@@ -44,7 +44,7 @@ const Register = ({ register, studentClass, setStudentClass }) => {
     const res = await register(user);
     console.log(res);
 
-    if (res?.access_token) {
+    if (res?.access) {
       navigate("/");
     }
 

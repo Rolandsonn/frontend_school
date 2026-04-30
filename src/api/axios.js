@@ -21,16 +21,14 @@ API.interceptors.response.use(
       originalRequest._retry = true;
 
       const refresh = localStorage.getItem("refresh_token");
-      console.log(refresh);
-
       const response = await axios.post(
         "https://school-diary-80vj.onrender.com/api/token/refresh/",
         { refresh: refresh },
       );
 
-      localStorage.setItem("access_token", response.data.access_token);
+      localStorage.setItem("access_token", response.data.access);
 
-      originalRequest.headers.Authorization = `Bearer ${response.data.access_token}`;
+      originalRequest.headers.Authorization = `Bearer ${response.data.access}`;
       return API(originalRequest);
     }
 

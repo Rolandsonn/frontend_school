@@ -43,23 +43,20 @@ const ProfilePage = ({ data, payment = [] }) => {
       setLoading(true);
 
       const res = await axios.patch(
-        "http://127.0.0.1:8000/api/user-info/update/",
+        "https://school-diary-80vj.onrender.com/api/user-info/update/",
         formData,
         {
           headers: {
             Authorization: `Bearer ${access_token}`,
-            "Content-Type": "multipart/form-user",
+            "Content-Type": "multipart/form-data",
           },
         },
       );
-
-      console.log("UPDATED:", res.user);
       setUser(res.data);
       setLoading(false);
       setFile(null);
       setPreview(null);
     } catch (err) {
-      console.log(err);
       setLoading(false);
     }
   }
