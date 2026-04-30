@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 const LoginPage = () => {
   const [form, setForm] = useState({
     email: "",
@@ -76,7 +76,7 @@ const LoginPage = () => {
         </button>
 
         <p>
-          Нет аккаунта? <a href="/register">Регистрация</a>
+          Нет аккаунта? <Link href="/register">Регистрация</Link>
         </p>
       </form>
     </div>
