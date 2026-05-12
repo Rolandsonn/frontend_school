@@ -33,6 +33,8 @@ const App = () => {
           Authorization: `Bearer ${access}`,
         },
       });
+      console.log(res.data);
+
       setData(res.data);
       loadSchedule(access, res.data.student_class);
       loadGrades(access, res.data.username);
