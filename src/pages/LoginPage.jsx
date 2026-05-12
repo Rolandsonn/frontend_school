@@ -38,7 +38,7 @@ const LoginPage = () => {
       // сохраняем токены
       localStorage.setItem("access_token", res.data.access_token);
       localStorage.setItem("refresh_token", res.data.refresh_token);
-      if (res.data.access) {
+      if (res.data.access_token) {
         navigate("/");
       }
     } catch (err) {
