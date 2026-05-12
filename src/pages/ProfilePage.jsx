@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import img from "../assets/hero.png";
 const ProfilePage = ({ data, payment = [] }) => {
   const [user, setUser] = useState();
   const [showPayments, setShowPayments] = useState(false);
@@ -22,7 +22,7 @@ const ProfilePage = ({ data, payment = [] }) => {
     ? user.avatar.startsWith("http")
       ? user.avatar
       : `${BASE_URL}${user.avatar}`
-    : "https://via.placeholder.com/150";
+    : img;
 
   const handleImage = (e) => {
     const img = e.target.files[0];
