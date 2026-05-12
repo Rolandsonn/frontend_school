@@ -18,9 +18,11 @@ const ProfilePage = ({ data, payment = [] }) => {
 
   const BASE_URL = "https://school-diary-80vj.onrender.com";
 
-  const avatarURL = user?.avatar?.startsWith("http")
-    ? user.avatar
-    : `${BASE_URL}${user?.avatar}`;
+  const avatarURL = user?.avatar
+    ? user.avatar.startsWith("http")
+      ? user.avatar
+      : `${BASE_URL}${user.avatar}`
+    : "https://via.placeholder.com/150";
 
   const handleImage = (e) => {
     const img = e.target.files[0];
